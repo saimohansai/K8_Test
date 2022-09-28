@@ -1,0 +1,43 @@
+
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  labels:
+    app: testing01
+  name: testing01
+spec:
+  replicas: 3
+  selector:
+    matchLabels:
+      app: testing01
+  strategy: {}
+  template:
+    metadata:
+      labels:
+        app: testing01
+    spec:
+      containers:
+      - image: sreehatsha:rollingupdate:v1
+        name: sreehatsha
+        resources: {}
+        
+status: {}
+
+---
+
+apiVersion: v1
+kind: Service
+metadata:
+  labels:
+    app: testing01
+  name: service-np
+spec:
+  ports:
+  - port: 8080
+    protocol: TCP
+    targetPort: 80
+  selector:
+    app: testing01
+  type: NodePort
+status:
+  loadBalancer: {}
