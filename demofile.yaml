@@ -17,8 +17,8 @@ spec:
         app: testing01
     spec:
       containers:
-      - image: sreehatsha:rollingupdate:v1
-        name: sreehatsha
+      - image: sreeharshav/rollingupdate:v1
+        name: sreehatshav
         resources: {}
         
 status: {}
