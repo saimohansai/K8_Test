@@ -17,7 +17,7 @@ spec:
         app: testing01
     spec:
       containers:
-      - image: sreeharshav/rollingupdate:v1
+      - image: sreeharshav/rollingupdate:v6
       #- image: nginx
         name: sreehatshav
         resources: {}
